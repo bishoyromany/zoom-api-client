@@ -23,6 +23,7 @@ class ZoomAPI {
   constructor(APIKey, APISecret) {
     this.APIKey = APIKey;
     this.APISecret = APISecret;
+    this.init();
   }
 
   generateToken = () => {
@@ -36,7 +37,7 @@ class ZoomAPI {
     ] = `Bearer ${this.JWTToken}`;
   };
 
-  init = async () => {
+  init = () => {
     this.generateToken();
     this.initAxios();
     return this;
@@ -70,4 +71,5 @@ ZoomAPI.prototype.deleteUsers = deleteUsers;
 ZoomAPI.prototype.updateUser = updateUser;
 ZoomAPI.prototype.updateUserSettings = updateUserSettings;
 ZoomAPI.prototype.handleAPI = axios.handleAPI;
-exports.ZoomAPI = ZoomAPI;
+
+module.exports = ZoomAPI;
