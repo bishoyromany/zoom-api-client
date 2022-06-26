@@ -1,5 +1,7 @@
-const generateToken = require("./helpers/generateToken");
-const axios = require("./helpers/axios");
+import generateToken from "./helpers/generateToken.js";
+import axios, { handleAPI } from "./helpers/axios.js";
+import userMethods from "./helpers/userMethods/index.js";
+
 const {
   listUsers,
   createUser,
@@ -11,7 +13,7 @@ const {
   deleteUsers,
   updateUser,
   updateUserSettings,
-} = require("./helpers/userMethods");
+} = userMethods;
 
 class ZoomAPI {
   APIKey;
@@ -70,6 +72,6 @@ ZoomAPI.prototype.deleteUser = deleteUser;
 ZoomAPI.prototype.deleteUsers = deleteUsers;
 ZoomAPI.prototype.updateUser = updateUser;
 ZoomAPI.prototype.updateUserSettings = updateUserSettings;
-ZoomAPI.prototype.handleAPI = axios.handleAPI;
+ZoomAPI.prototype.handleAPI = handleAPI;
 
-module.exports = ZoomAPI;
+export default ZoomAPI;

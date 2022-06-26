@@ -1,5 +1,5 @@
-const configs = require("./../configs/index");
-const axios = require("axios");
+import axios from "axios";
+import configs from "./../configs/index.js";
 
 axios.defaults.baseURL = configs.API_URL;
 
@@ -19,6 +19,6 @@ async function handleAPI(callback, success = false, fail = false) {
   }
 }
 
-module.exports = axios;
+export { handleAPI };
 
-module.exports.handleAPI = handleAPI;
+export default axios;

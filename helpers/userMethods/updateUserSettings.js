@@ -6,4 +6,4 @@ async function updateUserSettings(settings) {
   );
 }
 
-module.exports = updateUserSettings;
+export default updateUserSettings;

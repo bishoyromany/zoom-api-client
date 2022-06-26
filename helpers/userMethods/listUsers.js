@@ -27,4 +27,4 @@ async function listUsers(params = {}) {
   );
 }
 
-module.exports = listUsers;
+export default listUsers;

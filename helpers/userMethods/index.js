@@ -1,14 +1,15 @@
-const listUsers = require("./listUsers");
-const createUser = require("./createUser");
-const createCustUser = require("./createCustUser");
-const deleteUser = require("./deleteUser");
-const checkUserEmail = require("./checkUserEmail");
-const listUserMeetings = require("./listUserMeetings");
-const createUserMeeting = require("./createUserMeeting");
-const deleteUsers = require("./deleteUsers");
-const updateUser = require("./updateUser");
-const updateUserSettings = require("./updateUserSettings");
-module.exports = {
+import listUsers from "./listUsers.js";
+import createUser from "./createUser.js";
+import createCustUser from "./createCustUser.js";
+import deleteUser from "./deleteUser.js";
+import checkUserEmail from "./checkUserEmail.js";
+import listUserMeetings from "./listUserMeetings.js";
+import createUserMeeting from "./createUserMeeting.js";
+import deleteUsers from "./deleteUsers.js";
+import updateUser from "./updateUser.js";
+import updateUserSettings from "./updateUserSettings.js";
+
+export default {
   listUsers,
   createUser,
   checkUserEmail,

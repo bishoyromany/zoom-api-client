@@ -8,4 +8,4 @@ async function deleteUser() {
   );
 }
 
-module.exports = deleteUser;
+export default deleteUser;

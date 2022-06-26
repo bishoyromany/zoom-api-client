@@ -1,5 +1,5 @@
-require("dotenv").config();
-const ZoomAPI = require("./../index");
+import ZoomAPI from "./../index.js";
+import "dotenv/config";
 
 const { ZOOM_API_KEY, ZOOM_API_SECRET } = process.env;
 

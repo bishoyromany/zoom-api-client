@@ -11,4 +11,4 @@ async function method(email) {
   );
 }
 
-module.exports = method;
+export default method;

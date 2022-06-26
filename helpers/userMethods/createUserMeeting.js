@@ -6,7 +6,7 @@ async function method(body = {}) {
   );
 }
 
-module.exports = method;
+export default method;
 
 /**
  *
@@ -14,7 +14,7 @@ module.exports = method;
  * @returns
  */
 
-module.exports.createUserMeetingSample = {
+export const createUserMeetingSample = {
   agenda: "My Meeting",
   default_password: false,
   duration: 60,

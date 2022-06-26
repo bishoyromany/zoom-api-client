@@ -20,4 +20,4 @@ async function method(params = {}) {
   );
 }
 
-module.exports = method;
+export default method;
