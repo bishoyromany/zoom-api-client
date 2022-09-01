@@ -1,6 +1,6 @@
 {
   "name": "zoom-api-client",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Zoom API package, that helps you to interact with Zoom API",
   "main": "index.js",
   "scripts": {
