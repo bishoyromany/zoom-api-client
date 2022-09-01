@@ -1,5 +1,5 @@
-import updateMeeting from "./updateMeeting.js";
+const updateMeeting = require("./updateMeeting");
 
-export default {
+module.exports = {
   updateMeeting,
 };

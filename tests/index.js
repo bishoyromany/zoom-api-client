@@ -1,13 +1,15 @@
-import ZoomAPI from "./../index.js";
-import "dotenv/config";
+require('dotenv').config()
+const { ZoomAPI } = require("./../index");
 
 const { ZOOM_API_KEY, ZOOM_API_SECRET } = process.env;
 
 const test = async () => {
-  const zoomClient = new ZoomAPI(ZOOM_API_KEY, ZOOM_API_SECRET);
-  zoomClient.setUser({ id: "userid", email: "user email" });
+  const client = new ZoomAPI({
+    APIKey: ZOOM_API_KEY,
+    APISecret: ZOOM_API_SECRET,
+  });
 
-  const users = await zoomClient.listUsers();
+  const users = await client.listUsers();
 
   console.log(users);
 };

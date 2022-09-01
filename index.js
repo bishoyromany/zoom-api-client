@@ -1,8 +1,5 @@
-import generateToken from "./helpers/generateToken.js";
-import axios, { handleAPI } from "./helpers/axios.js";
-import userMethods from "./helpers/userMethods/index.js";
-import meetingMethods from "./helpers/meetingMethods/index.js";
-
+const generateToken = require("./helpers/generateToken");
+const axios = require("./helpers/axios");
 const {
   listUsers,
   createUser,
@@ -14,9 +11,11 @@ const {
   deleteUsers,
   updateUser,
   updateUserSettings,
-} = userMethods;
+  getUserByEmail,
+  getZakToken,
+} = require("./helpers/userMethods");
 
-const { updateMeeting } = meetingMethods;
+const { updateMeeting } = require("./helpers/meetingMethods");
 
 class ZoomAPI {
   APIKey;
@@ -25,7 +24,7 @@ class ZoomAPI {
   axios = axios;
   method;
   user;
-  constructor(APIKey, APISecret) {
+  constructor({ APIKey, APISecret }) {
     this.APIKey = APIKey;
     this.APISecret = APISecret;
     this.init();
@@ -42,13 +41,14 @@ class ZoomAPI {
     ] = `Bearer ${this.JWTToken}`;
   };
 
-  init = () => {
+  init = async () => {
     this.generateToken();
     this.initAxios();
     return this;
   };
 
   handleAPISuccess = async (data) => {
+    console.log(data);
     return data.data;
   };
 
@@ -58,10 +58,6 @@ class ZoomAPI {
 
   setUser = (user) => {
     this.user = user;
-  };
-
-  customCall = (...params) => {
-    return this.axios(...params);
   };
 }
 
@@ -74,8 +70,14 @@ ZoomAPI.prototype.createCustUser = createCustUser;
 ZoomAPI.prototype.deleteUser = deleteUser;
 ZoomAPI.prototype.deleteUsers = deleteUsers;
 ZoomAPI.prototype.updateUser = updateUser;
+ZoomAPI.prototype.getUserByEmail = getUserByEmail;
 ZoomAPI.prototype.updateUserSettings = updateUserSettings;
-ZoomAPI.prototype.updateMeeting = updateMeeting;
-ZoomAPI.prototype.handleAPI = handleAPI;
+ZoomAPI.prototype.getZakToken = getZakToken;
 
-export default ZoomAPI;
+/**
+ * meeting methods
+ */
+ZoomAPI.prototype.updateMeeting = updateMeeting;
+
+ZoomAPI.prototype.handleAPI = axios.handleAPI;
+exports.ZoomAPI = ZoomAPI;

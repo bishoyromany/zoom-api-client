@@ -14,4 +14,4 @@ async function deleteUsers(users) {
   return response;
 }
 
-export default deleteUsers;
+module.exports = deleteUsers;

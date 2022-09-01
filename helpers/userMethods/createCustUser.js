@@ -6,7 +6,7 @@ async function createCustUser(body = {}) {
   );
 }
 
-export default createCustUser;
+module.exports = createCustUser;
 
 /**
  *
@@ -14,7 +14,7 @@ export default createCustUser;
  * @returns
  */
 
-export const createCustUserSample = {
+module.exports.createCustUserSample = {
   email: "bishoy3@queensenglish.co",
   type: 2,
   first_name: "Bishoy",

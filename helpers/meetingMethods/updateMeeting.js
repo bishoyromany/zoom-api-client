@@ -1,8 +1,8 @@
-async function updateMeeting(meetingId, meeting) {
+async function updateMeeting(id, meeting) {
   this.method = "updateMeeting";
   return await this.handleAPI(
-    async () => await this.axios.patch(`/meetings/${meetingId}`, meeting)
+    async () => await this.axios.patch(`/meetings/${id}`, meeting)
   );
 }
 
-export default updateMeeting;
+module.exports = updateMeeting;

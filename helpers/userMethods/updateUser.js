@@ -5,4 +5,4 @@ async function updateUser(user) {
   );
 }
 
-export default updateUser;
+module.exports = updateUser;

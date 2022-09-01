@@ -11,12 +11,9 @@ npm i zoom-api-client
 ## Usage
 
 ```js
-import ZoomAPI from "zoom-api-client";
+const { ZoomAPI } = require("zoom-api-client");
 
-const client = ZoomAPI({
-  apiKey: process.env.ZoomApiKey,
-  apiSecret: process.env.ZoomApiSecret,
-});
+const client = new ZoomAPI(process.env.ZoomApiKey, process.env.ZoomApiSecret);
 
 const users = await client.listUsers();
 ```
