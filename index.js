@@ -15,7 +15,12 @@ const {
   getZakToken,
 } = require("./helpers/userMethods");
 
-const { updateMeeting } = require("./helpers/meetingMethods");
+const {
+  updateMeeting,
+  getMeetingRegistrant,
+  deleteMeetingRegistrant,
+  addMeetingRegistrant
+} = require("./helpers/meetingMethods");
 
 class ZoomAPI {
   APIKey;
@@ -78,6 +83,9 @@ ZoomAPI.prototype.getZakToken = getZakToken;
  * meeting methods
  */
 ZoomAPI.prototype.updateMeeting = updateMeeting;
+ZoomAPI.prototype.getMeetingRegistrant = getMeetingRegistrant;
+ZoomAPI.prototype.deleteMeetingRegistrant = deleteMeetingRegistrant;
+ZoomAPI.prototype.addMeetingRegistrant = addMeetingRegistrant;
 
 ZoomAPI.prototype.handleAPI = axios.handleAPI;
 exports.ZoomAPI = ZoomAPI;
