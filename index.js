@@ -22,6 +22,10 @@ const {
   addMeetingRegistrant
 } = require("./helpers/meetingMethods");
 
+const {
+  getMeetingParticipants
+} = require("./helpers/reportMethods");
+
 class ZoomAPI {
   APIKey;
   APISecret;
@@ -86,6 +90,12 @@ ZoomAPI.prototype.updateMeeting = updateMeeting;
 ZoomAPI.prototype.getMeetingRegistrant = getMeetingRegistrant;
 ZoomAPI.prototype.deleteMeetingRegistrant = deleteMeetingRegistrant;
 ZoomAPI.prototype.addMeetingRegistrant = addMeetingRegistrant;
+
+/**
+ * Reports methods
+ */
+ZoomAPI.prototype.getMeetingParticipants = getMeetingParticipants;
+
 
 ZoomAPI.prototype.handleAPI = axios.handleAPI;
 exports.ZoomAPI = ZoomAPI;
