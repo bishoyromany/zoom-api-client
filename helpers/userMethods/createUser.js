@@ -1,6 +1,5 @@
 async function createUser(body = {}) {
   this.method = "createUser";
-  console.log(body);
   return await this.handleAPI(
     async () => await this.axios.post(`/users`, body)
   );

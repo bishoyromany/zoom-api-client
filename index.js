@@ -57,7 +57,6 @@ class ZoomAPI {
   };
 
   handleAPISuccess = async (data) => {
-    console.log(data);
     return data.data;
   };
 
